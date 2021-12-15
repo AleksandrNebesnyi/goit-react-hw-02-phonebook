@@ -1,5 +1,5 @@
 import { Component } from "react";
-import {} from './ContactList.styled';
+import {List} from './ContactList.styled';
 import PropTypes from 'prop-types';
 import ContactItem from "../ContactItem/ContactItem";
 
@@ -11,36 +11,33 @@ class ContactList extends Component {
 render()
 {
     const contacts = this.props.contacts;
-    const deleteContact = this.props.onDelete;
+    const deleteContact = this.props.onDeleteContact;
 
 
     return (
-        <ul>
+        <List>
       {contacts.map(contact => (
         <ContactItem
         key={contact.id}
-         id={contact.id}
-         name={contact.name}
-         number={contact.number}
+        contact={contact}
         onDeleteContact={deleteContact}
         />
       ))}
-    </ul>
-
-
-
+    </List>
     )
-
-
-
+}
 }
 
 
 
-}
+ContactList.propTypes ={
+    onDeleteContact :PropTypes.func,
 
+}
 
 export default ContactList;
+
+
 
 // class ContactList extends Component {
 //     render() {

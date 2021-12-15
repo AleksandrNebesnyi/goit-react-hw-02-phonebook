@@ -7,7 +7,8 @@ import {Item, Name, Number, Button} from './ContactItem.styled'
 class ContactItem extends Component {
 
     render(){
-        const { id, name, number, onDeleteContact } = this.props;
+        const { id, name, number  } = this.props.contact;
+        const onDeleteContact=this.props.onDeleteContact;
         return (
 
             <Item>

@@ -57,27 +57,25 @@ class ContactForm extends Component {
             <input
               type="text"
               name="name"
-              
-              value={this.state.name} // Пишем значение в стейт
+               value={this.state.name} // Пишем значение в стейт
               onChange={this.hanldeChange} // Наблюдающий метод
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
               required
             />
           </label>
-          {/* <label className={styles.label}>
+          <label >
             Number
             <input
               type="tel"
               name="number"
-              className={styles.input}
               value={this.state.number} // Пишем значение в стейт
               onChange={this.hanldeChange} // Наблюдающий метод
               pattern="(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})"
               title="Номер телефона должен состоять из 11-12 цифр и может содержать цифры, пробелы, тире, пузатые скобки и может начинаться с +"
               required
             />
-          </label> */}
+          </label>
           <div >
             <button type="submit" >
               Add contact
