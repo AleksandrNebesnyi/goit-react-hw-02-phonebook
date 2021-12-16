@@ -4,6 +4,8 @@ import {Component} from 'react';
 import PropTypes from 'prop-types';
 import {Item, Name, Number, Button} from './ContactItem.styled'
 
+
+// Принимает один контакт и метод для удаления контакта
 class ContactItem extends Component {
 
     render(){
@@ -30,7 +32,6 @@ class ContactItem extends Component {
     }
 
 }
-
 
 ContactItem.propTypes ={
     id: PropTypes.string,

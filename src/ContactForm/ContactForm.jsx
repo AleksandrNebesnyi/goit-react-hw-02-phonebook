@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid'
+import {Form, Label, Input, Button} from './ContactForm.styled'
 
 
 
@@ -51,22 +52,22 @@ class ContactForm extends Component {
   
     render() {
       return (
-        <form onSubmit={this.hanldeSubmit}>
-          <label >
+        <Form onSubmit={this.hanldeSubmit}>
+          <Label >
             Name
-            <input
+            <Input
               type="text"
               name="name"
-               value={this.state.name} // Пишем значение в стейт
+              value={this.state.name} // Пишем значение в стейт
               onChange={this.hanldeChange} // Наблюдающий метод
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
               required
             />
-          </label>
-          <label >
+          </Label>
+          <Label >
             Number
-            <input
+            <Input
               type="tel"
               name="number"
               value={this.state.number} // Пишем значение в стейт
@@ -75,13 +76,13 @@ class ContactForm extends Component {
               title="Номер телефона должен состоять из 11-12 цифр и может содержать цифры, пробелы, тире, пузатые скобки и может начинаться с +"
               required
             />
-          </label>
-          <div >
-            <button type="submit" >
+          </Label>
+         
+            <Button type="submit" >
               Add contact
-            </button>
-          </div>
-        </form>
+            </Button>
+          
+        </Form>
       );
     }
   }

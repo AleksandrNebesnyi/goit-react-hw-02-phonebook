@@ -1,8 +1,8 @@
 {
-  "name": "counter-1",
+  "name": "goit-react-hw-02-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AleksandrNebesnyi.github.io/counter-1",
+  "homepage": "https://AleksandrNebesnyi.github.io/goit-react-hw-02-phonebook",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
@@ -12,6 +12,7 @@
     "gh-pages": "^3.2.3",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
+    "modern-normalize": "^1.1.0",
     "prettier": "^2.5.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",

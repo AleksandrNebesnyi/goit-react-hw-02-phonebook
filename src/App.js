@@ -1,9 +1,8 @@
 import {Component} from 'react';
 import Section from './Section/Section';
-import { nanoid } from 'nanoid'
-import s from './App'
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
+import ContactsFilter from './ContactsFilter/ContactsFilter';
 
 
 class App extends Component {
@@ -30,9 +29,10 @@ class App extends Component {
         number: "227-91-26",
       },
     ],
+    filter:"",
      }
 
-     // Добавляет контакт (желательно сократить или вынести)
+     // Добавляет контакт 
   addContact = newContact => {
     // Проверка на дубликат
     const duplicateName = this.state.contacts.find(
@@ -49,21 +49,30 @@ class App extends Component {
     }));
   };
 
+
+
   // Следит за полем фильтрации и пишет в стейт
   changeFilter = event => {
+    event.preventDefault();
     this.setState({ filter: event.currentTarget.value });
+    console.log(event.currentTarget.value);
+   
+  
   };
 
   // Фильтрует и возвращает результат фильтра
   filterContacts = () => {
     const { contacts, filter } = this.state;
-
+    console.log(this.state);
     const normalizedFilter = filter.toLowerCase();
 
-    return contacts.filter(contact =>
+    if (filter !=="") {return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter),
-    );
-  };
+    )} else{
+           return contacts;
+    }
+      };
+
 
   // Удаляет контакт
   deleteContact = id => {
@@ -78,16 +87,20 @@ class App extends Component {
 
   {
     return (
+      <>
       <Section title="Phonebook">
       <ContactForm onSubmit={this.addContact} />
-      <h2 className={s.title}> Contacts </h2>
+      </Section>
+
+      <Section title="Contacts" >
+      <ContactsFilter filter={this.state.filter}
+       onFilter={this.changeFilter} />
       <ContactList 
-      contacts={this.state.contacts}  
+      contacts={this.filterContacts()}  
       onDeleteContact={this.deleteContact}/>
 
-      </Section>
-      
-        
+    </Section>
+     </>   
       
     )
   }
