@@ -1,8 +1,8 @@
 import {Component} from 'react';
-import Section from './Section/Section';
-import ContactForm from './ContactForm/ContactForm';
-import ContactList from './ContactList/ContactList';
-import ContactsFilter from './ContactsFilter/ContactsFilter';
+import Section from './components/Section/Section';
+import ContactForm from './components/ContactForm/ContactForm';
+import ContactList from './components/ContactList/ContactList';
+import ContactsFilter from './components/ContactsFilter/ContactsFilter';
 
 
 class App extends Component {
